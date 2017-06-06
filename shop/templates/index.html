@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block artikel_anzeigen %}
+    <div class="row">
+    {% for a in artikel %}
+        <div class="col-sm-4">
+            <h3>
+                <a href="{% url 'view_artikel' a.artikelnummer %}">
+                {{ a.artikelnummer }} - {{ a.artikelbez }}
+                </a>
+            </h3>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

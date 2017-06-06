@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webshop</title>
+    {% block header_block %}
+    {% endblock %}
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1>Webshop</h1>
+        <p>Ur gut, sei ehrlich</p>
+    </div>
+    <div class="container">
+        {%  block artikel_anzeigen %}
+        {%  endblock %}
+    </div>
+    <div style="font-size: 6pt">
+        <a href="{% url 'impressum'%}">AGB / Impressum</a>
+    </div>
+</body>
+</html>
