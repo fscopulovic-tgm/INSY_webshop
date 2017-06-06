@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ artikel.artikelnummer }} - {{ artikel.artikelbez }}</title>
-    {% block header_block %}
-    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<a href="{% url 'index' %}">Zurueck zu Hauptseite</a>
+<div class="jumbotron text-center">
+        <h1>Webshop</h1>
+        <p>Ur gut, sei ehrlich</p>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <h3>
+            Artikelnummer: {{ artikel.artikelnummer }}
+        </h3>
+        <h3>
+            Artikelname: {{ artikel.artikelbez }}
+        </h3>
+        <p>
+            Artikelinfo: {{ artikel.artikelinfo }}
+        </p>
+        <p>
+            Preis: {{ artikel.npreis }}
+        </p>
+        <p>
+            Verfügbare Stücke: {{ artikel.verfuegbareStucke }}
+        </p>
+    </div>
+</div>
+<div class="row">
+    <a href="{% url 'index' %}">Zurueck zu Hauptseite</a>
+</div>
 </body>
 </html>

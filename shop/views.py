@@ -16,6 +16,5 @@ def view_artikel(request, artikel_id):
     return render(request, 'view_artikel.html', {'artikel': a})
 
 
-
 def impressum(request):
     return render(request, 'impressum.html')
