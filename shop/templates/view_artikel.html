@@ -9,31 +9,57 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="jumbotron text-center">
+    <div class="jumbotron text-center">
         <h1>Webshop</h1>
-        <p>Ur gut, sei ehrlich</p>
-</div>
-<div class="row">
-    <div class="col-sm-4">
-        <h3>
-            Artikelnummer: {{ artikel.artikelnummer }}
-        </h3>
-        <h3>
-            Artikelname: {{ artikel.artikelbez }}
-        </h3>
-        <p>
-            Artikelinfo: {{ artikel.artikelinfo }}
-        </p>
-        <p>
-            Preis: {{ artikel.npreis }}
-        </p>
-        <p>
-            Verfügbare Stücke: {{ artikel.verfuegbareStucke }}
-        </p>
+        <p>By Bishara & Scopulovic</p>
     </div>
-</div>
-<div class="row">
-    <a href="{% url 'index' %}">Zurueck zu Hauptseite</a>
-</div>
+    <div class="container">
+        <div class="row">
+            <h2>
+                Artikel
+            </h2>
+            <div class="col-sm-4">
+                <h3>
+                    Artikelnummer: {{ artikel.artikelnummer }}
+                </h3>
+                <h3>
+                    Artikelname: {{ artikel.artikelbez }}
+                </h3>
+                <p>
+                    Artikelinfo: {{ artikel.artikelinfo }}
+                </p>
+                <p>
+                    Preis: {{ artikel.npreis }}
+                </p>
+                <p>
+                    Verfügbare Stücke: {{ artikel.verfuegbareStucke }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <h2>
+                Feedback
+            </h2>
+            {% for f in feedback %}
+                <div class="col-sm-4">
+                    <h3>
+                        Kunde: {{ f.kunde.name }}
+                    </h3>
+                    <p>
+                        Feedback: {{ f.feedbackbewertung }}
+                    </p>
+                    <p>
+                        Gemacht am {{ f.feedbackdatum }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <a href="{% url 'index' %}">Zurueck zu Hauptseite</a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <a href="{% url 'impressum'%}">AGB / Impressum</a>
+    </div>
 </body>
 </html>

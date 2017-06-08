@@ -1,15 +1,52 @@
 {% extends 'base.html' %}
 
-{% block artikel_anzeigen %}
+{% block sonstArtikel %}
     <div class="row">
-    {% for a in artikel %}
-        <div class="col-sm-4">
-            <h3>
-                <a href="{% url 'view_artikel' a.artikelnummer %}">
-                {{ a.artikelnummer }} - {{ a.artikelbez }}
-                </a>
-            </h3>
-        </div>
-    {% endfor %}
+        <h2>
+            Sonstige Artikel
+        </h2>
+        {% for a in sonstArtikel %}
+            <div class="col-sm-4">
+                <h3>
+                    <a href="{% url 'view_artikel' a.artikelnummer %}">
+                        {{ a.artikelbez }}
+                    </a>
+                </h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block bluray %}
+    <div class="row">
+        <h2>
+            Blurays
+        </h2>
+        {% for a in bluray %}
+            <div class="col-sm-4">
+                <h3>
+                    <a href="{% url 'view_artikel' a.artikelnummer %}">
+                        {{ a.artikelbez }}
+                    </a>
+                </h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block bucher %}
+    <div class="row">
+        <h2>
+            Bücher
+        </h2>
+        {% for a in bucher %}
+            <div class="col-sm-4">
+                <h3>
+                    <a href="{% url 'view_artikel' a.artikelnummer %}">
+                        {{ a.artikelbez }}
+                    </a>
+                </h3>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

@@ -6,14 +6,16 @@ from .models import *
 
 
 def index(request):
-    ls = Land.objects.all()
-    a = Artikel.objects.all()
-    return render(request, 'index.html', {'countries': ls, 'artikel': a})
+    sonst = SonstigerArtikel.objects.all()
+    bucher = Buch.objects.all()
+    bluray = Bluray.objects.all()
+    return render(request, 'index.html', {'sonstArtikel': sonst, 'bucher': bucher, 'bluray': bluray})
 
 
 def view_artikel(request, artikel_id):
     a = get_object_or_404(Artikel, pk=artikel_id)
-    return render(request, 'view_artikel.html', {'artikel': a})
+    f = Feedback.objects.filter(artikel=a)
+    return render(request, 'view_artikel.html', {'artikel': a, 'feedback': f})
 
 
 def impressum(request):

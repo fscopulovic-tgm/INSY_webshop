@@ -11,10 +11,16 @@
 <body>
     <div class="jumbotron text-center">
         <h1>Webshop</h1>
-        <p>Ur gut, sei ehrlich</p>
+        <p>By Bishara & Scopulovic</p>
     </div>
     <div class="container">
-        {%  block artikel_anzeigen %}
+        {% block bucher %}
+        {% endblock %}
+
+        {% block bluray %}
+        {% endblock %}
+
+        {%  block sonstArtikel %}
         {%  endblock %}
     </div>
     <div class="col-sm-4">
